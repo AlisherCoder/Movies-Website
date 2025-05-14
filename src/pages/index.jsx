@@ -7,6 +7,7 @@ const Home = lazy(() => import("./home/Home"));
 const Movies = lazy(() => import("./movies/Movies"));
 const Saved = lazy(() => import("./saved/Saved"));
 const Search = lazy(() => import("./search/Search"));
+const SingleMovie = lazy(() => import("./singlemovie/SingleMovie"));
 
 const MainRouters = () => {
    return useRoutes([
@@ -47,6 +48,14 @@ const MainRouters = () => {
                element: (
                   <Suspense>
                      <Search />
+                  </Suspense>
+               ),
+            },
+            {
+               path: "/movie/:id",
+               element: (
+                  <Suspense>
+                     <SingleMovie />
                   </Suspense>
                ),
             },

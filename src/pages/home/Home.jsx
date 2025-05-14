@@ -1,12 +1,14 @@
-import MovieView from "@/components/movie-view/MovieView";
+import { Slider } from "@/components/swiper/Swiper";
 import { useFetch } from "@/hooks/useFetch";
 import React from "react";
+import { SliderCards } from "./SwiperCards";
 
 const Home = () => {
    const { data, error, loading } = useFetch("/discover/movie");
    return (
       <div>
-         <MovieView movies={data?.results} />
+         <Slider movies={data?.results} />
+         <SliderCards movies={data?.results} />
       </div>
    );
 };
