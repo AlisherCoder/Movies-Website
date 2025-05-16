@@ -29,7 +29,7 @@ export const SliderCards = ({ movies }) => {
                "--swiper-navigation-color": "#fff",
                "--swiper-pagination-background-color": "#fff",
             }}
-            slidesPerView={4}
+            slidesPerView={1}
             spaceBetween={30}
             loop={true}
             keyboard={{
@@ -41,6 +41,20 @@ export const SliderCards = ({ movies }) => {
             navigation={true}
             modules={[Keyboard, Pagination, Navigation]}
             className="mySwiper"
+            breakpoints={{
+               640: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+               },
+               768: {
+                  slidesPerView: 4,
+                  spaceBetween: 40,
+               },
+               1024: {
+                  slidesPerView: 5,
+                  spaceBetween: 50,
+               },
+            }}
          >
             {movies?.map((movie) => (
                <SwiperSlide className="mb-10">

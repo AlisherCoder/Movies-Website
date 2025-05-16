@@ -37,7 +37,7 @@ export const Slider = ({ movies }) => {
                   <img src={url + movie?.backdrop_path} />
 
                   <div className="flex flex-col justify-center items-center left-1/2 bottom-[24px] gap-2.5 absolute -translate-x-1/2">
-                     <h1 className="text-[#fff] text-[32px]">{movie.original_title}</h1>
+                     <h1 className="text-[#fff] md:text-2xl lg:text-[32px]">{movie.original_title}</h1>
 
                      <div className="flex gap-1.5 items-center text-[#fff]">
                         <p>{movie.release_date.slice(0, 4)}</p>
@@ -46,9 +46,9 @@ export const Slider = ({ movies }) => {
                      </div>
 
                      <div className="">
-                        <button onClick={() => navigate(`/movie/${movie.id}`)} className="text-primary py-[14px] px-[137px] rounded-[12px] bg-amber-50 flex items-center gap-2.5 cursor-pointer">
+                        <button onClick={() => navigate(`/movie/${movie.id}`)} className="text-primary py-1 px-2 md:py-2 md:px-10 lg:py-[14px] lg:px-[137px] rounded-[12px] bg-amber-50 flex items-center gap-2.5 cursor-pointer">
                            <FaPlay />
-                           Смотреть
+                           <p>Смотреть</p>
                         </button>
                      </div>
                   </div>

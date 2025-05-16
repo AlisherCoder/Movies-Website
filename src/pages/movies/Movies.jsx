@@ -45,8 +45,26 @@ const Movies = () => {
       <div className="mb-[40px]">
          <Genres genres={genres} handleChangeGenre={handleChangeGenre} />
          {loading ? <div className="w-20 mx-auto">Skleton.....</div> : <MovieView movies={data?.results} />}
-         <div className="container mx-auto flex justify-center my-10 w-full bg-dark py-2 rounded-[12px]">
-            <Pagination page={Number(page)} count={data?.total_pages > 500 ? 500 : data?.total_pages} onChange={handleChange} color="primary" />
+         <div className="container mx-auto flex justify-center my-10 w-full py-2 rounded-[12px]">
+            <Pagination
+               page={Number(page)}
+               count={data?.total_pages > 500 ? 500 : data?.total_pages}
+               onChange={handleChange}
+               color="primary"
+               sx={{
+                  "& .MuiPaginationItem-root": {
+                     color: "#c61f1f",
+                     // border: '1px solid white', // ensures border is visible
+                  },
+                  "& .MuiPaginationItem-root.Mui-selected": {
+                     backgroundColor: "#1D1D1D",
+                     color: "white",
+                  },
+                  "& .MuiPaginationItem-root:hover": {
+                     backgroundColor: "rgba(255,255,255,0.1)",
+                  },
+               }}
+            />
          </div>
       </div>
    );

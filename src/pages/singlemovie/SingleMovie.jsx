@@ -1,6 +1,6 @@
 import MovieView from "@/components/movie-view/MovieView";
 import { useFetch } from "@/hooks/useFetch";
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 const SingleMovie = () => {
@@ -9,6 +9,9 @@ const SingleMovie = () => {
    const url = import.meta.env.VITE_IMAGE_URL;
    const { data: images } = useFetch(`/movie/${id}/images`);
    const { data: similars } = useFetch(`/movie/${id}/similar`);
+   useEffect(() => {
+      scrollTo(0, 0);
+   }, []);
 
    return (
       <div className="container mx-auto">

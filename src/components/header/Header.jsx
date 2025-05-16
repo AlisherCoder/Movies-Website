@@ -32,13 +32,13 @@ const Header = () => {
 
                <li>
                   <NavLink onClick={() => setIsMenuOpen((p) => !p)} className="text-text flex flex-col items-center nav_link max-[750px]:flex-row gap-2.5" to={"/movies"}>
-                     <MdOutlineMovie className="text-2xl" /> Сеансы
+                     <MdOutlineMovie className="text-2xl" /> Фильмы
                   </NavLink>
                </li>
 
                <li>
                   <NavLink onClick={() => setIsMenuOpen((p) => !p)} className="text-text flex flex-col items-center nav_link max-[750px]:flex-row gap-2.5" to={"/saved"}>
-                     <IoBookmarkOutline className="text-2xl" /> Билеты
+                     <IoBookmarkOutline className="text-2xl" /> Избранные
                   </NavLink>
                </li>
 
