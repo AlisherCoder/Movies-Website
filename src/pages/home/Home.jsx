@@ -4,7 +4,7 @@ import React from "react";
 import { SliderCards } from "./SwiperCards";
 
 const Home = () => {
-   const { data, error, loading } = useFetch("/discover/movie");
+   const { data } = useFetch("/discover/movie");
    return (
       <div>
          <Slider movies={data?.results} />

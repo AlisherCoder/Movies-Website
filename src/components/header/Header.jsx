@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "@/assets/header-logo.svg";
 import { IoHomeOutline, IoBookmarkOutline, IoSearchOutline } from "react-icons/io5";

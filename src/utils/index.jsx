@@ -1,9 +1,10 @@
 import React from "react";
+import logo from "@/assets/logo.svg";
 
 export const Loading = () => {
    return (
       <div className="w-full h-screen grid place-items-center">
-         <p>Loading...</p>
+         <img className="w-[80px] h-[80px]" src={logo} alt="" />
       </div>
    );
 };

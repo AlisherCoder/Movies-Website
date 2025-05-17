@@ -2,6 +2,7 @@ import { useStateValue } from "@/context";
 import React from "react";
 import { FaBookmark, FaRegBookmark } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import noimage from "@/assets/noimage.jpg";
 
 const Card = ({ item }) => {
    const url = import.meta.env.VITE_IMAGE_URL;
@@ -11,7 +12,7 @@ const Card = ({ item }) => {
    return (
       <div className="flex flex-col gap-3 select-none cursor-pointer hover:opacity-90">
          <div className="rounded-[12px] overflow-hidden flex-1 relative">
-            <img onClick={() => navigate(`/movie/${item.id}`)} src={url + item?.poster_path} alt="" loading="lazy" />
+            <img className="transition-opacity" onClick={() => navigate(`/movie/${item.id}`)} src={item?.poster_path ? url + item.poster_path : noimage} alt="" loading="lazy" />
             <button onClick={() => dispatch({ type: "SAVED", payload: item })} className="absolute p-2 bg-black top-0 right-0 cursor-pointer rounded-bl-lg">
                {state.saved.some(({ id }) => id == item.id) ? <FaBookmark className="text-primary text-[18px]" /> : <FaRegBookmark className="text-[18px] text-[#fff]" />}
             </button>
