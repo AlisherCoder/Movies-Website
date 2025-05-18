@@ -44,14 +44,8 @@ const Movies = () => {
 
    return (
       <div className="mb-[40px]">
-         {loading ? (
-            <Skleton />
-         ) : (
-            <>
-               <Genres genres={genres} handleChangeGenre={handleChangeGenre} />
-               <MovieView movies={data?.results} />
-            </>
-         )}
+         <Genres genres={genres} handleChangeGenre={handleChangeGenre} />
+         {loading ? <Skleton /> : <MovieView movies={data?.results} />}
          <div className="container mx-auto flex justify-center my-10 w-full py-2 rounded-[12px]">
             <Pagination
                page={Number(page)}
