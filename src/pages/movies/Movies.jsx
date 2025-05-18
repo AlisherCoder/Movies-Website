@@ -4,6 +4,7 @@ import { useFetch } from "@/hooks/useFetch";
 import Pagination from "@mui/material/Pagination";
 import { useCallback } from "react";
 import { useSearchParams } from "react-router-dom";
+import Skleton from "./Skleton";
 
 const Movies = () => {
    const [params, setParams] = useSearchParams();
@@ -43,8 +44,14 @@ const Movies = () => {
 
    return (
       <div className="mb-[40px]">
-         <Genres genres={genres} handleChangeGenre={handleChangeGenre} />
-         {loading ? <div className="w-20 mx-auto">Skleton.....</div> : <MovieView movies={data?.results} />}
+         {loading ? (
+            <Skleton />
+         ) : (
+            <>
+               <Genres genres={genres} handleChangeGenre={handleChangeGenre} />
+               <MovieView movies={data?.results} />
+            </>
+         )}
          <div className="container mx-auto flex justify-center my-10 w-full py-2 rounded-[12px]">
             <Pagination
                page={Number(page)}

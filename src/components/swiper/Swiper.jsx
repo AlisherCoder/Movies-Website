@@ -55,7 +55,7 @@ export const Slider = ({ movies }) => {
                </SwiperSlide>
             ))}
          </Swiper>
-         <Swiper onSwiper={setThumbsSwiper} loop={true} spaceBetween={10} slidesPerView={4} freeMode={true} watchSlidesProgress={true} modules={[FreeMode, Navigation, Thumbs]} className="w-1/2 border-amber-50 flex gap-4">
+         <Swiper onSwiper={setThumbsSwiper} loop={true} spaceBetween={10} slidesPerView={4} freeMode={true} watchSlidesProgress={true} modules={[FreeMode, Navigation, Thumbs]} className="w-1/2 flex gap-4">
             {movies?.map((movie) => (
                <SwiperSlide className="rounded-[12px] overflow-hidden opacity-80 cursor-pointer" key={movie.id}>
                   <img src={url + movie?.backdrop_path} />
