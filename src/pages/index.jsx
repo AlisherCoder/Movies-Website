@@ -1,67 +1,69 @@
-import { Suspense } from "@/utils";
-import React, { lazy } from "react";
-import { useRoutes } from "react-router-dom";
+import { Suspense } from '@/utils';
+import React, { lazy } from 'react';
+import { useRoutes } from 'react-router-dom';
 
-const Layout = lazy(() => import("./layout/Layout"));
-const Home = lazy(() => import("./home/Home"));
-const Movies = lazy(() => import("./movies/Movies"));
-const Saved = lazy(() => import("./saved/Saved"));
-const Search = lazy(() => import("./search/Search"));
-const SingleMovie = lazy(() => import("./singlemovie/SingleMovie"));
+const Layout = lazy(() => import('./layout/Layout'));
+const Home = lazy(() => import('./home/Home'));
+const Movies = lazy(() => import('./movies/Movies'));
+const Saved = lazy(() => import('./saved/Saved'));
+const Search = lazy(() => import('./search/Search'));
+const SingleMovie = lazy(() => import('./singlemovie/SingleMovie'));
+const Reports = lazy(() => import('./reports'));
 
 const MainRouters = () => {
-   return useRoutes([
-      {
-         path: "/",
-         element: (
-            <Suspense>
-               <Layout />
-            </Suspense>
-         ),
-         children: [
-            {
-               path: "/",
-               element: (
-                  <Suspense>
-                     <Home />
-                  </Suspense>
-               ),
-            },
-            {
-               path: "/movies",
-               element: (
-                  <Suspense>
-                     <Movies />
-                  </Suspense>
-               ),
-            },
-            {
-               path: "/saved",
-               element: (
-                  <Suspense>
-                     <Saved />
-                  </Suspense>
-               ),
-            },
-            {
-               path: "/search",
-               element: (
-                  <Suspense>
-                     <Search />
-                  </Suspense>
-               ),
-            },
-            {
-               path: "/movie/:id",
-               element: (
-                  <Suspense>
-                     <SingleMovie />
-                  </Suspense>
-               ),
-            },
-         ],
-      },
-   ]);
+  return useRoutes([
+    {
+      path: '/',
+      element: (
+        <Suspense>
+          {/* <Layout /> */}
+          <Reports />
+        </Suspense>
+      ),
+      // children: [
+      //    {
+      //       path: "/",
+      //       element: (
+      //          <Suspense>
+      //             <Home />
+      //          </Suspense>
+      //       ),
+      //    },
+      //    {
+      //       path: "/movies",
+      //       element: (
+      //          <Suspense>
+      //             <Movies />
+      //          </Suspense>
+      //       ),
+      //    },
+      //    {
+      //       path: "/saved",
+      //       element: (
+      //          <Suspense>
+      //             <Saved />
+      //          </Suspense>
+      //       ),
+      //    },
+      //    {
+      //       path: "/search",
+      //       element: (
+      //          <Suspense>
+      //             <Search />
+      //          </Suspense>
+      //       ),
+      //    },
+      //    {
+      //       path: "/movie/:id",
+      //       element: (
+      //          <Suspense>
+      //             <SingleMovie />
+      //          </Suspense>
+      //       ),
+      //    },
+      // ],
+    },
+  ]);
 };
 
 export default MainRouters;
